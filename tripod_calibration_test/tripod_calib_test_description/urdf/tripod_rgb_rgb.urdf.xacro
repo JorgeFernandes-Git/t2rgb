@@ -1,7 +1,17 @@
 <?xml version="1.0"?>
 <robot name="tripod_macro" xmlns:xacro="http://ros.org/wiki/xacro">
 
+    <!-- <xacro:include filename="$(find tripod_calib_test_description)/urdf/tripod_rgb_rgb.gazebo.xacro" /> -->
+    <!-- testing adding a sensor camera -->
+    <xacro:include filename="$(find tripod_calib_test_description)/urdf/tripod_rgb_rgb.gazebo.xacro" />
+    <xacro:sensor_astra parent="tripod" prefix="cameraR">
+        <origin xyz="-0.350 0.180 0.870"
+            rpy="0 0 3.14" />
+    </xacro:sensor_astra>
     <xacro:property name="M_PI" value="3.1415926535897931" />
+
+
+
 
     <!-- Place tripod in the scene-->
     <!-- <xacro:tripod_macro name="tripod" parent="world"> -->
