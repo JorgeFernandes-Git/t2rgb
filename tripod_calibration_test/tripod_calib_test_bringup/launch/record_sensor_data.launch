@@ -1,0 +1,22 @@
+<?xml version="1.0"?>
+<launch>
+    <!--arguments-->
+    <arg name="only_raw_data" default="true"/>
+    <!--Whether or not to record only raw data-->
+    <arg name="bag" default="tripod_rgb_rgb"/>
+    <arg name="simulation" default="false"/>
+
+    <param name="/use_sim_time" value="$(arg simulation)"/>
+
+    <!--To record only raw data-->
+    <group if="$(arg only_raw_data)">
+        <node name="rosbag_record" pkg="rosbag" type="record" output="screen" args="
+            /tf
+            /tf_static
+            /joint_states
+            -o /tmp/bag_file.bag">
+        </node>
+
+<!--        http://wiki.ros.org/openni_launch/Tutorials/BagRecordingPlayback-->
+    </group>
+</launch>
