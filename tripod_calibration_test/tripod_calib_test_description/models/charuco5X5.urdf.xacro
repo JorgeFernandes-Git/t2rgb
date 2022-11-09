@@ -20,10 +20,13 @@
         </collision>
     </link>
 
-    <link name="world"/>
+    <!-- <link name="world"/> -->
     <joint name="fixed" type="fixed">
         <parent link="world"/>
         <child link="charuco5X5"/>
+
+        <origin xyz="1 0 1" rpy="${-M_PI/2 + M_PI/12} ${M_PI/6} ${M_PI/2}" />
+
     </joint>
     <gazebo reference="charuco5X5">
         <static>true</static>
