@@ -18,7 +18,7 @@
             rpy="0 0 0" />
     </xacro:sensor_astra>
 
-    <!-- ADD CHESSBOARD -->
+    <!-- ADD charuco REMOVED FROM HERE TO BE SEEN AS A DIFFERENT OBJECT IN THE SIMULATION -->
     <!-- <xacro:include filename="$(find tripod_calib_test_description)/models/charuco5X5.urdf.xacro" /> -->
 
     <material name="grey">
