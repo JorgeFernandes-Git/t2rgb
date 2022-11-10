@@ -30,7 +30,7 @@
 #   - ROS Package Reference
 #       Example: package://your_package/urdf/description.urdf.xacro
 #
-description_file: "package://tripod_calib_test_description/urdf/tripod_rgb_rgb.urdf.xacro"
+description_file: "package://tripod_rgb_rgb_description/urdf/tripod_rgb_rgb.urdf.xacro"
 
 # The calibration framework requires a bagfile to extract the necessary data for the calibration.
 # bag_file: "$ROS_BAGS/data.bag"
@@ -79,7 +79,7 @@ sensors:
     child_link: "cameraR_link"
     topic_name: "/cameraR/rgb/image_raw"
     # throttle: 10
-    modality: rgb
+    # modality: rgb
 
   left_camera:
     link: "cameraL_rgb_optical_frame"
@@ -87,7 +87,7 @@ sensors:
     child_link: "cameraL_link"
     topic_name: "/cameraL/rgb/image_raw"
     # throttle: 10
-    modality: rgb
+    # modality: rgb
 
 # The calibration requires a detectable pattern.
 # This section describes the properties of the calibration pattern used in th calibration.

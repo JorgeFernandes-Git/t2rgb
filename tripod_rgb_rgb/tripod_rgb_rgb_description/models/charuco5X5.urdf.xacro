@@ -9,7 +9,7 @@
         </inertial>
         <visual>
             <geometry>
-                <mesh filename="package://tripod_calib_test_description/meshes/objects/charuco_5x5.dae" />
+                <mesh filename="package://tripod_rgb_rgb_description/meshes/objects/charuco_5x5.dae" />
                 <!-- <box size="0.3 0.2 0.01" /> -->
             </geometry>
         </visual>

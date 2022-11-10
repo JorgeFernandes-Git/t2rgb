@@ -27,7 +27,7 @@
     <group ns="$(arg name)">
         <param name="tf_prefix" value="$(arg name)"/>
 
-        <param name="robot_description" command="$(find xacro)/xacro --inorder $(find tripod_calib_test_description)/models/charuco5X5.urdf.xacro" />
+        <param name="robot_description" command="$(find xacro)/xacro --inorder $(find tripod_rgb_rgb_description)/models/charuco5X5.urdf.xacro" />
 
         <!-- Send robot states to tf -->
         <node name="robot_state_publisher" pkg="robot_state_publisher" type="robot_state_publisher"/>

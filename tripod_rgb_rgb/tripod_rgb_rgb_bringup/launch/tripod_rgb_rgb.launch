@@ -24,7 +24,7 @@
         <arg name="gui" value="$(arg gui)" />
     </include>
 
-    <param name="robot_description" command="$(find xacro)/xacro --inorder $(find tripod_calib_test_description)/urdf/tripod_rgb_rgb.urdf.xacro" />
+    <param name="robot_description" command="$(find xacro)/xacro --inorder $(find tripod_rgb_rgb_description)/urdf/tripod_rgb_rgb.urdf.xacro" />
 
     <!-- Send robot states to tf -->
     <node pkg="robot_state_publisher" type="robot_state_publisher" name="robot_state_publisher">
