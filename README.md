@@ -4,19 +4,19 @@ Tripod for multi sensor calibration configurations
 
 Launching the tripod with RViz:
 
-    roslaunch tripod_calib_test_bringup tripod_rgb_rgb.launch
+    roslaunch tripod_rgb_rgb_bringup tripod_rgb_rgb.launch
     
 Launching with RViz and Gazebo:
 
-    roslaunch tripod_calib_test_bringup tripod_rgb_rgb.launch gui:=true
+    roslaunch tripod_rgb_rgb_bringup tripod_rgb_rgb.launch gui:=true
 
 Launching Gazebo with charuco:
 
-    roslaunch tripod_calib_test_bringup tripod_rgb_rgb_w_charuco.launch
+    roslaunch tripod_rgb_rgb_bringup tripod_rgb_rgb_w_charuco.launch
 
 Record bagfile for calibration (on another terminal):
 
-    roslaunch tripod_calib_test_bringup record_sensor_data.launch
+    roslaunch tripod_rgb_rgb_bringup record_sensor_data.launch
 
 
 # 2 RGB Astra Cameras on the Tripod with a ChArUco:
