@@ -34,7 +34,7 @@ description_file: "package://tripod_rgb_rgb_description/urdf/tripod_rgb_rgb.urdf
 
 # The calibration framework requires a bagfile to extract the necessary data for the calibration.
 # bag_file: "$ROS_BAGS/data.bag"
-bag_file: "$ROS_BAGS/tripod_rgb_rgb/tripod_w_charuco.bag"
+bag_file: "$ROS_BAGS/tripod_rgb_rgb/tripod_w_charuco_mmtbot_world.bag"
 
 # You must define a frame of reference for the optimization process.
 # It must exist in the transformation chains of all the sensors which are being calibrated.
@@ -75,16 +75,20 @@ sensors:
 
   right_camera:
     link: "cameraR_rgb_optical_frame"
-    parent_link: "tripod_right_support"
-    child_link: "cameraR_link"
+    # parent_link: "tripod_right_support"
+    # child_link: "cameraR_link"
+    parent_link: "cameraR_link"
+    child_link: "cameraR_rgb_frame"
     topic_name: "/cameraR/rgb/image_raw"
     throttle: 5
     modality: "rgb"
 
   left_camera:
     link: "cameraL_rgb_optical_frame"
-    parent_link: "tripod_left_support"
-    child_link: "cameraL_link"
+    # parent_link: "tripod_left_support"
+    # child_link: "cameraL_link"
+    parent_link: "cameraL_link"
+    child_link: "cameraL_rgb_frame"
     topic_name: "/cameraL/rgb/image_raw"
     throttle: 5
     modality: "rgb"
@@ -94,7 +98,7 @@ sensors:
 calibration_pattern:
   # The frame id (or link) of the pattern.
   # This link/transformation will be optimized.
-  link: "pattern_link"
+  link: "charuco5X5"
 
   # The parent frame id (or link) of the pattern.
   # For example, in hand-eye calibration the parent link

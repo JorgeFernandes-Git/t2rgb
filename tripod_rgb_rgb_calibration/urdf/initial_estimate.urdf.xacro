@@ -1,7 +1,7 @@
 <?xml version="1.0" ?>
 <robot name="tripod_macro" version="1.0">
   <joint name="cameraR_joint" type="fixed">
-    <origin xyz="0.0 0.05 0.015" rpy="0.0 -0.0 0.0"/>
+    <origin xyz="0.0 0.05 0.015" rpy="0.0 0.0 0.0"/>
     <parent link="tripod_right_support"/>
     <child link="cameraR_link"/>
   </joint>
@@ -25,7 +25,7 @@
     </collision>
   </link>
   <joint name="cameraR_rgb_joint" type="fixed">
-    <origin xyz="0.0 -0.045 0.0" rpy="0.0 0.0 0.0"/>
+    <origin xyz="0.0 -0.045 0.0" rpy="0.0 -0.0 0.0"/>
     <parent link="cameraR_link"/>
     <child link="cameraR_rgb_frame"/>
   </joint>
@@ -85,7 +85,7 @@
     </sensor>
   </gazebo>
   <joint name="cameraL_joint" type="fixed">
-    <origin xyz="0.0 0.075 0.015" rpy="0.0 -0.0 0.0"/>
+    <origin xyz="0.0 0.075 0.015" rpy="0.0 0.0 0.0"/>
     <parent link="tripod_left_support"/>
     <child link="cameraL_link"/>
   </joint>
@@ -109,7 +109,7 @@
     </collision>
   </link>
   <joint name="cameraL_rgb_joint" type="fixed">
-    <origin xyz="0.0 -0.045 0.0" rpy="0.0 0.0 0.0"/>
+    <origin xyz="0.0 -0.045 0.0" rpy="0.0 -0.0 0.0"/>
     <parent link="cameraL_link"/>
     <child link="cameraL_rgb_frame"/>
   </joint>
