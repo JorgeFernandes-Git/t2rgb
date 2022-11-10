@@ -1,5 +1,0 @@
-<?xml version="1.0"?>
-<launch>
-    <!-- Launch rviz, loading configuration file -->
-    <node name="rviz" pkg="rviz" type="rviz" args="--display-config $(find tripod_calib_test_bringup)/config/tripod_rgb_rgb.rviz" required="false" />
-</launch>

@@ -33,7 +33,8 @@
 description_file: "package://tripod_calib_test_description/urdf/tripod_rgb_rgb.urdf.xacro"
 
 # The calibration framework requires a bagfile to extract the necessary data for the calibration.
-bag_file: "$ROS_BAGS/data.bag"
+# bag_file: "$ROS_BAGS/data.bag"
+bag_file: "$ROS_BAGS/tripod_rgb_rgb/tripod_w_charuco.bag"
 
 # You must define a frame of reference for the optimization process.
 # It must exist in the transformation chains of all the sensors which are being calibrated.

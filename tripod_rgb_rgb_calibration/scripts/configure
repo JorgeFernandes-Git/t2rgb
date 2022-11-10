@@ -19,7 +19,7 @@ done
 
 if test -z "$configfile"
 then
-rosrun atom_calibration configure_calibration_pkg -n tripod_rgb_rgb_atom_calib
+rosrun atom_calibration configure_calibration_pkg -n tripod_rgb_rgb_calibration
 else
-rosrun atom_calibration configure_calibration_pkg -n tripod_rgb_rgb_atom_calib -cfg $configfile
+rosrun atom_calibration configure_calibration_pkg -n tripod_rgb_rgb_calibration -cfg $configfile
 fi

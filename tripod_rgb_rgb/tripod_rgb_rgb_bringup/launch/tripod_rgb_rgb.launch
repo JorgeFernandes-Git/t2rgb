@@ -2,7 +2,7 @@
 <launch>
 
     <arg name="sim" default="true" />
-    <arg name="gui" default="true" doc="Starts gazebo gui" />
+    <arg name="gui" default="false" doc="Starts gazebo gui" />
     <arg name="paused" default="false" doc="Starts gazebo in paused mode" />
 
     <arg name="name" default="tripod_rgb_rgb" />
@@ -39,9 +39,7 @@
         -R $(arg roll) -P $(arg pitch) -Y $(arg yaw)
         -param robot_description" />
 
-    <!-- include launch to charuco -->
-    <include file="$(find tripod_calib_test_bringup)/launch/charuco.launch">
-        <arg name="name" value="charuco"/>
-    </include>
+    <!-- Launch rviz, loading configuration file -->
+    <node name="rviz" pkg="rviz" type="rviz" args="--display-config $(find tripod_rgb_rgb_bringup)/config/tripod_rgb_rgb.rviz" required="false" />
 
 </launch>
