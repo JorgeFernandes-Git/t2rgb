@@ -13,7 +13,7 @@
     <arg name="only_raw_data" default="true"/>
     <!--Whether or not to record only raw data-->
     <arg name="bag" default="$(env ROS_BAGS)/data.bag"/>
-    <arg name="simulation" default="false"/>
+    <arg name="simulation" default="true"/>
 
     <param name="/use_sim_time" value="$(arg simulation)"/>
 
