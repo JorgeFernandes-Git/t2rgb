@@ -98,7 +98,7 @@ sensors:
 calibration_pattern:
   # The frame id (or link) of the pattern.
   # This link/transformation will be optimized.
-  link: "charuco5X5"
+  link: "pattern_link"
 
   # The parent frame id (or link) of the pattern.
   # For example, in hand-eye calibration the parent link
@@ -122,24 +122,24 @@ calibration_pattern:
 
   # Mesh file (collada.dae or stl) for showing pattern on rviz. URI or regular path.
   # See: description_file
-  mesh_file: "package://tripod_rgb_rgb_description/meshes/objects/charuco_5x5.dae"
+  mesh_file: "package://tripod_rgb_lidar_description/models/charuco_800x600/charuco_800x600.dae"
 
   # The border width from the edge corner to the pattern physical edge.
   # Used for 3D sensors and lidars.
   # It can be a scalar (same border in x and y directions), or it can be {'x': ..., 'y': ,,,}
-  border_size: { "x": 0.05, "y": 0.05 }
+  border_size: { "x": 0.04, "y": 0.03 }
 
   # The number of corners the pattern has in the X and Y dimensions.
   # Note: The charuco detector uses the number of squares per dimension in its detector.
   # Internally we add a +1 to Y and X dimensions to account for that.
   # Therefore, the number of corners should be used even for the charuco pattern.
-  dimension: { "x": 9, "y": 6 }
+  dimension: { "x": 11, "y": 8 }
 
   # The length of the square edge.
-  size: 0.02
+  size: 0.06
 
   # The length of the charuco inner marker.
-  inner_size: 0.015
+  inner_size: 0.045
 
 # Miscellaneous configuration
 
