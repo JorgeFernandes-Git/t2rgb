@@ -1,57 +1,69 @@
-<?xml version="1.0" ?>
+<?xml version="1.0"?>
 <robot name="tripod_macro" version="1.0">
+
   <joint name="camera_right_joint" type="fixed">
-    <origin xyz="0.0 0.05 0.015" rpy="0.0 0.0 0.0"/>
-    <parent link="tripod_right_support"/>
-    <child link="camera_right_link"/>
+    <origin xyz="0.0 0.05 0.015" rpy="0.0 0.0 0.0" />
+    <parent link="tripod_right_support" />
+    <child link="camera_right_link" />
   </joint>
+
   <link name="camera_right_link">
     <inertial>
-      <origin xyz="0.0 0.0 0.0" rpy="0 0 0"/>
-      <mass value="0.564"/>
-      <inertia ixx="0.003881243" ixy="0.0" ixz="0.0" iyy="0.00049894" iyz="0.0" izz="0.003879257"/>
+      <origin xyz="0.0 0.0 0.0" rpy="0 0 0" />
+      <mass value="0.564" />
+      <inertia ixx="0.003881243" ixy="0.0" ixz="0.0" iyy="0.00049894" iyz="0.0" izz="0.003879257" />
     </inertial>
     <collision>
-      <origin xyz="-0.01 -0.06 0.0" rpy="0.0 0.0 0.0"/>
+      <origin xyz="-0.01 -0.06 0.0" rpy="0.0 0.0 0.0" />
       <geometry>
-        <box size="0.04 0.165 0.03"/>
+        <box size="0.04 0.165 0.03" />
       </geometry>
     </collision>
   </link>
+
   <gazebo reference="camera_right_link">
     <selfCollide>false</selfCollide>
   </gazebo>
+
   <joint name="camera_right_rgb_joint" type="fixed">
-    <origin xyz="0.0 -0.045 0.0" rpy="0.0 -0.0 0.0"/>
-    <parent link="camera_right_link"/>
-    <child link="camera_right_rgb_frame"/>
+    <origin xyz="0.0005209253551980347 -0.03617339647319985 -0.011479420546483453" rpy="0.01843166991852172 -0.0034089482428418263 0.004603148305513264" />
+    <parent link="camera_right_link" />
+    <child link="camera_right_rgb_frame" />
   </joint>
-  <link name="camera_right_rgb_frame"/>
+
+  <link name="camera_right_rgb_frame" />
+
   <joint name="camera_right_rgb_optical_joint" type="fixed">
-    <origin xyz="0.0 0.0 0.0" rpy="-1.5707963267948966 0.0 -1.5707963267948966"/>
-    <parent link="camera_right_rgb_frame"/>
-    <child link="camera_right_rgb_optical_frame"/>
+    <origin xyz="0.0 0.0 0.0" rpy="-1.5707963267948966 0.0 -1.5707963267948966" />
+    <parent link="camera_right_rgb_frame" />
+    <child link="camera_right_rgb_optical_frame" />
   </joint>
+
   <link name="camera_right_rgb_optical_frame">
     <visual>
-      <origin xyz="0.0 0.0 -0.03" rpy="1.5707963267948966 0.0 0.0"/>
+      <origin xyz="0.0 0.0 -0.03" rpy="1.5707963267948966 0.0 0.0" />
       <geometry>
-        <mesh filename="package://t2rgb_description/meshes/sensors/astra2.dae" scale="1.0 1.0 1.0"/>
+        <mesh filename="package://t2rgb_description/meshes/sensors/astra2.dae" scale="1.0 1.0 1.0" />
       </geometry>
     </visual>
   </link>
+
   <joint name="camera_right_depth_joint" type="fixed">
-    <origin xyz="0.0 -0.02 0.0" rpy="0.0 0.0 0.0"/>
-    <parent link="camera_right_link"/>
-    <child link="camera_right_depth_frame"/>
+    <origin xyz="0.0 -0.02 0.0" rpy="0.0 0.0 0.0" />
+    <parent link="camera_right_link" />
+    <child link="camera_right_depth_frame" />
   </joint>
-  <link name="camera_right_depth_frame"/>
+
+  <link name="camera_right_depth_frame" />
+
   <joint name="camera_right_depth_optical_joint" type="fixed">
-    <origin xyz="0.0 0.0 0.0" rpy="-1.5707963267948966 0.0 -1.5707963267948966"/>
-    <parent link="camera_right_depth_frame"/>
-    <child link="camera_right_depth_optical_frame"/>
+    <origin xyz="0.0 0.0 0.0" rpy="-1.5707963267948966 0.0 -1.5707963267948966" />
+    <parent link="camera_right_depth_frame" />
+    <child link="camera_right_depth_optical_frame" />
   </joint>
-  <link name="camera_right_depth_optical_frame"/>
+
+  <link name="camera_right_depth_optical_frame" />
+
   <gazebo reference="camera_right_depth_frame">
     <sensor name="camera" type="depth">
       <always_on>true</always_on>
@@ -88,58 +100,70 @@
       </plugin>
     </sensor>
   </gazebo>
+
   <joint name="camera_left_joint" type="fixed">
-    <origin xyz="0.0 0.075 0.015" rpy="0.0 0.0 0.0"/>
-    <parent link="tripod_left_support"/>
-    <child link="camera_left_link"/>
+    <origin xyz="0.0 0.075 0.015" rpy="0.0 0.0 0.0" />
+    <parent link="tripod_left_support" />
+    <child link="camera_left_link" />
   </joint>
+
   <link name="camera_left_link">
     <inertial>
-      <origin xyz="0.0 0.0 0.0" rpy="0 0 0"/>
-      <mass value="0.564"/>
-      <inertia ixx="0.003881243" ixy="0.0" ixz="0.0" iyy="0.00049894" iyz="0.0" izz="0.003879257"/>
+      <origin xyz="0.0 0.0 0.0" rpy="0 0 0" />
+      <mass value="0.564" />
+      <inertia ixx="0.003881243" ixy="0.0" ixz="0.0" iyy="0.00049894" iyz="0.0" izz="0.003879257" />
     </inertial>
     <collision>
-      <origin xyz="-0.01 -0.06 0.0" rpy="0.0 0.0 0.0"/>
+      <origin xyz="-0.01 -0.06 0.0" rpy="0.0 0.0 0.0" />
       <geometry>
-        <box size="0.04 0.165 0.03"/>
+        <box size="0.04 0.165 0.03" />
       </geometry>
     </collision>
   </link>
+
   <gazebo reference="camera_left_link">
     <selfCollide>false</selfCollide>
   </gazebo>
+
   <joint name="camera_left_rgb_joint" type="fixed">
-    <origin xyz="0.0 -0.045 0.0" rpy="0.0 -0.0 0.0"/>
-    <parent link="camera_left_link"/>
-    <child link="camera_left_rgb_frame"/>
+    <origin xyz="-0.0019452346314990437 -0.03864037374945174 -0.004458487237583798" rpy="0.018296669584651013 -0.003460658961089324 0.006472138607952493" />
+    <parent link="camera_left_link" />
+    <child link="camera_left_rgb_frame" />
   </joint>
-  <link name="camera_left_rgb_frame"/>
+
+  <link name="camera_left_rgb_frame" />
+
   <joint name="camera_left_rgb_optical_joint" type="fixed">
-    <origin xyz="0.0 0.0 0.0" rpy="-1.5707963267948966 0.0 -1.5707963267948966"/>
-    <parent link="camera_left_rgb_frame"/>
-    <child link="camera_left_rgb_optical_frame"/>
+    <origin xyz="0.0 0.0 0.0" rpy="-1.5707963267948966 0.0 -1.5707963267948966" />
+    <parent link="camera_left_rgb_frame" />
+    <child link="camera_left_rgb_optical_frame" />
   </joint>
+
   <link name="camera_left_rgb_optical_frame">
     <visual>
-      <origin xyz="0.0 0.0 -0.03" rpy="1.5707963267948966 0.0 0.0"/>
+      <origin xyz="0.0 0.0 -0.03" rpy="1.5707963267948966 0.0 0.0" />
       <geometry>
-        <mesh filename="package://t2rgb_description/meshes/sensors/astra2.dae" scale="1.0 1.0 1.0"/>
+        <mesh filename="package://t2rgb_description/meshes/sensors/astra2.dae" scale="1.0 1.0 1.0" />
       </geometry>
     </visual>
   </link>
+
   <joint name="camera_left_depth_joint" type="fixed">
-    <origin xyz="0.0 -0.02 0.0" rpy="0.0 0.0 0.0"/>
-    <parent link="camera_left_link"/>
-    <child link="camera_left_depth_frame"/>
+    <origin xyz="0.0 -0.02 0.0" rpy="0.0 0.0 0.0" />
+    <parent link="camera_left_link" />
+    <child link="camera_left_depth_frame" />
   </joint>
-  <link name="camera_left_depth_frame"/>
+
+  <link name="camera_left_depth_frame" />
+
   <joint name="camera_left_depth_optical_joint" type="fixed">
-    <origin xyz="0.0 0.0 0.0" rpy="-1.5707963267948966 0.0 -1.5707963267948966"/>
-    <parent link="camera_left_depth_frame"/>
-    <child link="camera_left_depth_optical_frame"/>
+    <origin xyz="0.0 0.0 0.0" rpy="-1.5707963267948966 0.0 -1.5707963267948966" />
+    <parent link="camera_left_depth_frame" />
+    <child link="camera_left_depth_optical_frame" />
   </joint>
-  <link name="camera_left_depth_optical_frame"/>
+
+  <link name="camera_left_depth_optical_frame" />
+
   <gazebo reference="camera_left_depth_frame">
     <sensor name="camera" type="depth">
       <always_on>true</always_on>
@@ -176,30 +200,34 @@
       </plugin>
     </sensor>
   </gazebo>
+
   <material name="grey">
-    <color rgba="0.7 0.7 0.7 1.0"/>
+    <color rgba="0.7 0.7 0.7 1.0" />
   </material>
-  <link name="world"/>
+
+  <link name="world" />
+
   <link name="tripod">
     <inertial>
-      <origin xyz="0.0 0.0 0.0" rpy="0.0 0.0 0.0"/>
-      <mass value="1.0"/>
-      <inertia ixx="1.0" ixy="0.0" ixz="0.0" iyy="1.0" iyz="0.0" izz="1.0"/>
+      <origin xyz="0.0 0.0 0.0" rpy="0.0 0.0 0.0" />
+      <mass value="1.0" />
+      <inertia ixx="1.0" ixy="0.0" ixz="0.0" iyy="1.0" iyz="0.0" izz="1.0" />
     </inertial>
     <visual>
-      <origin xyz="0.0 0.0 0.0" rpy="0.0 0.0 0.0"/>
+      <origin xyz="0.0 0.0 0.0" rpy="0.0 0.0 0.0" />
       <geometry>
-        <mesh filename="package://t2rgb_description/meshes/tripod/tripod.dae" scale="0.04 0.04 0.04"/>
+        <mesh filename="package://t2rgb_description/meshes/tripod/tripod.dae" scale="0.04 0.04 0.04" />
       </geometry>
-      <material name="grey"/>
+      <material name="grey" />
     </visual>
     <collision name="tripod_collision">
-      <origin xyz="0.0 0.0 0.0" rpy="0.0 0.0 0.0"/>
+      <origin xyz="0.0 0.0 0.0" rpy="0.0 0.0 0.0" />
       <geometry>
-        <mesh filename="package://t2rgb_description/meshes/tripod/tripod.dae" scale="0.04 0.04 0.04"/>
+        <mesh filename="package://t2rgb_description/meshes/tripod/tripod.dae" scale="0.04 0.04 0.04" />
       </geometry>
     </collision>
   </link>
+
   <gazebo reference="tripod">
     <material>Gazebo/Grey</material>
     <mu1>50.0</mu1>
@@ -208,11 +236,13 @@
     <kd>1.0</kd>
     <selfCollide>false</selfCollide>
   </gazebo>
+
   <joint name="world_to_tripod" type="fixed">
-    <origin xyz="0.0 0.0 0.0" rpy="0.0 0.0 0.0"/>
-    <parent link="world"/>
-    <child link="tripod"/>
+    <origin xyz="0.0 0.0 0.0" rpy="0.0 0.0 0.0" />
+    <parent link="world" />
+    <child link="tripod" />
   </joint>
+
   <gazebo reference="tripod">
     <material>Gazebo/Grey</material>
     <mu1>50.0</mu1>
@@ -221,26 +251,28 @@
     <kd>1.0</kd>
     <selfCollide>false</selfCollide>
   </gazebo>
+
   <link name="tripod_plate">
     <inertial>
-      <origin xyz="0.0 0.0 0.0" rpy="0.0 0.0 0.0"/>
-      <mass value="1.0"/>
-      <inertia ixx="1.0" ixy="0.0" ixz="0.0" iyy="1.0" iyz="0.0" izz="1.0"/>
+      <origin xyz="0.0 0.0 0.0" rpy="0.0 0.0 0.0" />
+      <mass value="1.0" />
+      <inertia ixx="1.0" ixy="0.0" ixz="0.0" iyy="1.0" iyz="0.0" izz="1.0" />
     </inertial>
     <visual>
-      <origin xyz="0.0 0.0 0.0" rpy="0.0 0.0 0.0"/>
+      <origin xyz="0.0 0.0 0.0" rpy="0.0 0.0 0.0" />
       <geometry>
-        <box size="0.04 0.4 0.015"/>
+        <box size="0.04 0.4 0.015" />
       </geometry>
-      <material name="grey"/>
+      <material name="grey" />
     </visual>
     <collision name="tripod_collision">
-      <origin xyz="0.0 0.0 0.0" rpy="0.0 0.0 0.0"/>
+      <origin xyz="0.0 0.0 0.0" rpy="0.0 0.0 0.0" />
       <geometry>
-        <box size="0.04 0.15 0.015"/>
+        <box size="0.04 0.15 0.015" />
       </geometry>
     </collision>
   </link>
+
   <gazebo reference="tripod">
     <material>Gazebo/Grey</material>
     <mu1>50.0</mu1>
@@ -249,21 +281,27 @@
     <kd>1.0</kd>
     <selfCollide>false</selfCollide>
   </gazebo>
+
   <joint name="tripod_to_tripod_plate" type="fixed">
-    <origin xyz="0.01 0.03 1.33" rpy="0.0 0.314 0.0"/>
-    <parent link="tripod"/>
-    <child link="tripod_plate"/>
+    <origin xyz="0.01 0.03 1.33" rpy="0.0 0.314 0.0" />
+    <parent link="tripod" />
+    <child link="tripod_plate" />
   </joint>
-  <link name="tripod_left_support"/>
+
+  <link name="tripod_left_support" />
+
   <joint name="tripod_plate_to_tripod_left_support" type="fixed">
-    <origin xyz="0.0 0.18 0.0075" rpy="0.0 0.0 0.0"/>
-    <parent link="tripod_plate"/>
-    <child link="tripod_left_support"/>
+    <origin xyz="0.0 0.18 0.0075" rpy="0.0 0.0 0.0" />
+    <parent link="tripod_plate" />
+    <child link="tripod_left_support" />
   </joint>
-  <link name="tripod_right_support"/>
+
+  <link name="tripod_right_support" />
+
   <joint name="tripod_plate_to_tripod_right_support" type="fixed">
-    <origin xyz="0.0 -0.18 0.0075" rpy="0.0 0.0 0.0"/>
-    <parent link="tripod_plate"/>
-    <child link="tripod_right_support"/>
+    <origin xyz="0.0 -0.18 0.0075" rpy="0.0 0.0 0.0" />
+    <parent link="tripod_plate" />
+    <child link="tripod_right_support" />
   </joint>
+  
 </robot>

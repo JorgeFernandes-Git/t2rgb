@@ -35,7 +35,7 @@ description_file: "package://t2rgb_description/urdf/t2rgb.urdf.xacro"
 # The calibration framework requires a bagfile to extract the necessary data for the calibration.
 # bag_file: "$ROS_BAGS/data.bag"
 # bag_file: "$ROS_BAGS/tripod_rgb_rgb/tripod_w_charuco_mmtbot_world.bag"
-bag_file: "$ROS_BAGS/t2rgb/diogo1.bag"
+bag_file: "$ROS_BAGS/t2rgb/bag_19_12_22.bag"
 
 # You must define a frame of reference for the optimization process.
 # It must exist in the transformation chains of all the sensors which are being calibrated.
